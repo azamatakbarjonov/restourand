@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container-xxl py-5 bg-dark hero-header mb-5">
+    <div class="container text-center my-5 pt-5 pb-4">
+        <h1 class="display-3 text-white mb-3 animated slideInDown">About</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center text-uppercase">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/">Pages</a></li>
+                <li class="breadcrumb-item text-white active" aria-current="page">About</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+</div>
+
+        <!-- About Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="row g-3">
+                            {% for i in about %}
+                            <div class="col-6 text-start">
+                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="{{i.image.url}}">
+                            </div>
+                            {% endfor%}
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h5 class="section-title ff-secondary text-start text-primary fw-normal">{{aboutm.full_name}}</h5>
+                        <h1 class="mb-4">Hush kelbsiz  <i class="fa fa-utensils text-primary me-2"></i>Restoran</h1>
+                        <b>{{aboutm.descrption}}</b><hr>
+                        <div class="row g-4 mb-4">
+                            {% for i in section %}
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center border-start border-5 border-primary px-3">
+                                    <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">{{i.number}}</h1>
+                                    <div class="ps-4">
+                                        <h6 class="text-uppercase mb-0">{{i.title}}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            <hr>
+                        <!-- <a class="btn btn-primary py-3 px-5 mt-2" href="" style="height: 50px; width: 400px; border-radius: 10; background-color: rgb(148, 136, 31); color: rgb(204, 255, 0);">Read More</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+<!-- Team Start -->
+<div class="container-xxl pt-5 pb-3">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h5 class="section-title ff-secondary text-center text-primary fw-normal">Team Members</h5>
+            <h1 class="mb-5">Our Master Chefs</h1>
+        </div>
+        <div class="row g-4">
+            {% for i in chef %}
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item text-center rounded overflow-hidden">
+                    <div class="rounded-circle overflow-hidden m-4 mx-auto team-img">
+                        <img class="img-fluid" style="height: 220px; width: 700px; padding-top: -90px;" src="{{i.image.url}}" alt="">
+                    </div>
+                    <h5 class="mb-0">{{i.full_name}}</h5>
+                    <small>{{i.title}}</small>
+                    <div class="d-flex justify-content-center mt-3">
+                        <a class="btn btn-square btn-primary mx-1" href="{{i.facebook}}"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-primary mx-1" href="{{i.twiter}}"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-primary mx-1" href="{{i.instagram}}"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</html>
+{% endblock %}
