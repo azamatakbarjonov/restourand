@@ -5,7 +5,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-dl@u-7bb55q8s8!l#7gf-0k+xx)hnjd(uzc+3tyaq*bmyme58d'
 
-DEBUG = True
+DEBUG = False
+
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'restourandz.onrender.com']
 
@@ -87,8 +88,8 @@ USE_TZ = True
 
 # ✅ STATIC and MEDIA
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # static fayllaring joylashgan joy
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') 
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
