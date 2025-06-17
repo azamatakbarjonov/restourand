@@ -5,7 +5,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-dl@u-7bb55q8s8!l#7gf-0k+xx)hnjd(uzc+3tyaq*bmyme58d'
 
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'restourandz.onrender.com']
